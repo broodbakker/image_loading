@@ -1,0 +1,42 @@
+
+backend:
+  name: git-gateway
+  branch: master
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dta9vptzh
+    api_key: 651661895481873
+    multiple: true
+public_folder: /image
+publish_mode: editorial_workflow
+collections:
+  - name: photos
+    identifier_field: name
+    label: Photos
+    folder: "content/photos"
+    create: true
+    sort: "date:desc"
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.name}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["paarden","stallen","dekjes"]
+      - name: image
+        label: Image
+        widget: 'image'
+        valueField: "{{slug}}"
+
+
+
+
+
+
+
+
+
+
+
