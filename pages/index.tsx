@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div>tegsds1t</div>
+    <div>tegsdds1t</div>
   )
 }
 
