@@ -25,8 +25,8 @@
     "**/*.tsx",
     "plugins/netlify-plugin-store-posts-for-search/index.js",
     "plugins/netlify-plugin-store-posts-for-search/functions/index.js",
-    "pages/index.js",
-    "pages/index.js"
+    "pages/index.tsx",
+    "pages/index.tsx"
   ],
   "exclude": [
     "node_modules"

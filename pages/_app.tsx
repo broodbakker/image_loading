@@ -13,7 +13,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     <ChakraProvider>
       <Script id="my-script" src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <Component {...pageProps} />
-
     </ChakraProvider>
   );
 };
