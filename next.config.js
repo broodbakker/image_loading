@@ -5,5 +5,6 @@ const nextConfig = {
 
 module.exports = {
   distDir: 'build',
-  nextConfig
+  nextConfig,
+  target: "serverless"
 }
