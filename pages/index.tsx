@@ -47,12 +47,12 @@ interface HomeInterface {
   resources: ResourceApiResponse["resources"]
 }
 
-// { resources }: HomeInterface
-export default function Home() {
+
+export default function Home({ resources }: HomeInterface) {
   return (
     <div>
       <Header />
-      {/* <PhotoGallery photos={createImageGallaryData(resources)} />; */}
+      <PhotoGallery photos={createImageGallaryData(resources)} />;
     </div>
   )
 }
