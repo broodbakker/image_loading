@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react'
 import Script from 'next/script'
+import Head from "next/head";
 // Modules
 import { AppProps } from 'next/app';
 
@@ -11,7 +12,15 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ChakraProvider>
-      <Script id="my-script" src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+      <Script
+        src="https://widget.Cloudinary.com/v2.0/global/all.js"
+        type="text/javascript"
+        key="cloudinary"
+      />
+      <Script id="my-script" src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        key="netlify" />
+
+
       <Component {...pageProps} />
     </ChakraProvider>
   );
