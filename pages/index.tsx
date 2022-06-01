@@ -47,21 +47,22 @@ interface HomeInterface {
   resources: ResourceApiResponse["resources"]
 }
 
-export default function Home({ resources }: HomeInterface) {
+// { resources }: HomeInterface
+export default function Home() {
   return (
     <div>
       <Header />
-      <PhotoGallery photos={createImageGallaryData(resources)} />;
+      {/* <PhotoGallery photos={createImageGallaryData(resources)} />; */}
     </div>
   )
 }
 
 export async function getStaticProps() {
-  const { resources } = await getImages(constants.cloud_folder);
+  // const { resources } = await getImages(constants.cloud_folder);
 
   return {
     props: {
-      resources: resources
+      resources: 3
     }
   }
 }
