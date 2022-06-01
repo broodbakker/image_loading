@@ -5,7 +5,9 @@ import Head from "next/head";
 // Modules
 import { AppProps } from 'next/app';
 
-// import * as gtag from "../lib/gtag";
+
+
+// import * as gtag from "../lib/gtag ";
 const isProduction = process.env.NODE_ENV === "production";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -19,7 +21,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       />
       <Script id="my-script" src="https://identity.netlify.com/v1/netlify-identity-widget.js"
         key="netlify" />
-
 
       <Component {...pageProps} />
     </ChakraProvider>
