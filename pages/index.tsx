@@ -47,7 +47,6 @@ interface HomeInterface {
   resources: ResourceApiResponse["resources"]
 }
 
-
 export default function Home({ resources }: HomeInterface) {
   return (
     <div>
@@ -58,11 +57,11 @@ export default function Home({ resources }: HomeInterface) {
 }
 
 export async function getStaticProps() {
-  const { resources } = await getImages(constants.cloud_folder);
+  const resources = await getImages(constants.cloud_folder);
 
   return {
     props: {
-      resources: 3
+      resources
     }
   }
 }

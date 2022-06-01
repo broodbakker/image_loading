@@ -5,8 +5,6 @@ import Head from "next/head";
 // Modules
 import { AppProps } from 'next/app';
 
-
-
 // import * as gtag from "../lib/gtag ";
 const isProduction = process.env.NODE_ENV === "production";
 

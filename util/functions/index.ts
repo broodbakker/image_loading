@@ -15,4 +15,4 @@ export const openWidget = () => {
   widget.open(); // open up the widget after creation
 };
 
-export const createImageGallaryData = (resources: ResourceApiResponse["resources"]) => resources.map((resource: any) => ({ src: resource.url, width: 3, height: 3 }))
+export const createImageGallaryData = (resources: any) => resources.map((resource: any) => ({ src: resource.url, width: 3, height: 3 }))
