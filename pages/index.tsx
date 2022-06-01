@@ -63,6 +63,7 @@ export async function getStaticProps() {
   return {
     props: {
       resources
-    }
+    },
+    revalidate: 10
   }
 }
