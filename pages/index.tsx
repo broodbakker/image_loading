@@ -51,6 +51,7 @@ export default function Home({ resources }: HomeInterface) {
   return (
     <div>
       <Header />
+
       <PhotoGallery photos={createImageGallaryData(resources)} />;
     </div>
   )
