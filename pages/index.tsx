@@ -2,7 +2,7 @@ import PhotoGallery from 'react-photo-gallery';
 //api
 import { getImages } from "./api/images"
 //components
-import { Button, Flex, Text } from '@chakra-ui/react'
+import { Header } from "../components/header"
 //typescipt
 import type { ResourceApiResponse } from "cloudinary";
 //functions
@@ -12,46 +12,14 @@ const constants = {
   cloud_folder: "image_loading_folder",
 }
 
-const Header = () => {
-  return (
-    <Flex
-      px="4"
-      py="4"
-      justify="space-between"
-    >
-      <Text
-        as="div"
-        fontSize="xl"
-        fontWeight="bold"
-      >
-        <span
-          role="img"
-        >
-          🏆
-        </span>
-        <span
-          role="img"
-        >
-          🌟
-        </span>
-        loading images
-      </Text>
-      <Flex align="end">
-        <Button type="button" variant='outline' onClick={openWidget} colorScheme='blue'>Upload Image</Button>
-      </Flex>
-    </Flex>
-  );
-};
-
-interface HomeInterface {
+interface IHome {
   resources: ResourceApiResponse["resources"]
 }
 
-export default function Home({ resources }: HomeInterface) {
+export default function Home({ resources }: IHome) {
   return (
     <div>
       <Header />
-
       <PhotoGallery photos={createImageGallaryData(resources)} />;
     </div>
   )
