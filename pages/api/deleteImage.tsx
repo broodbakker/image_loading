@@ -1,6 +1,5 @@
 import cloudinary from "cloudinary"
 // //typescipt
-import type { ResourceApiResponse } from "cloudinary";
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 cloudinary.v2.config({
@@ -9,15 +8,9 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 })
 
-export const getImages = async (tag: string) => {
-  //const { resources } = await cloudinary.v2.api.sub_folders(tag);
+export const destroyImage = (public_id: string) => cloudinary.v2.uploader.destroy(public_id,
+  (result) => { return result });
 
-  const { resources }: ResourceApiResponse = await cloudinary.v2.search.expression(
-    `folder:${tag}/*` // add your folder
-  ).sort_by('public_id', 'desc').max_results(30).execute()
-
-  return resources
-}
 
 function getErrorMessage(error: unknown) {
   if (error instanceof Error) return error.message
@@ -25,14 +18,13 @@ function getErrorMessage(error: unknown) {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-
-  const images = await getImages("image_loading_folder")
-
-  if (req.method === 'GET') {
+  if (req.method === 'POST') {
     try {
+      const { result } = await destroyImage(req.body)
+
       res.status(200).json({
         statusCode: 200,
-        message: images,
+        message: result,
       });
     } catch (err) {
       reportError({ message: getErrorMessage(err) })
